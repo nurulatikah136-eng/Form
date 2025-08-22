@@ -1,4 +1,3 @@
-
   document.getElementById("receiptForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -95,4 +94,4 @@
   doc.text("Resit ini dijana secara automatik.", 52.5, 140, { align: "center" });
 
   doc.save(`${invoiceNo}.pdf`);
-}); 
+});
