@@ -1,4 +1,5 @@
-document.getElementById("receiptForm").addEventListener("submit", function(e) {
+
+  document.getElementById("receiptForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const { jsPDF } = window.jspdf;
@@ -33,7 +34,7 @@ document.getElementById("receiptForm").addEventListener("submit", function(e) {
   doc.text(`No. Resit: ${invoiceNo}`, 10, 21);
   doc.text(`Tarikh Resit: ${today.toLocaleDateString("ms-MY")}`, 60, 21);
 
-  // Garisan pemisah
+  // Separator line
   doc.setLineWidth(0.2);
   doc.line(10, 23, 95, 23);
 
@@ -52,7 +53,6 @@ document.getElementById("receiptForm").addEventListener("submit", function(e) {
   doc.text(":", 45, 38);
   doc.text(date || "-", 48, 38);
 
-  // Garisan pemisah
   doc.setLineWidth(0.1);
   doc.line(10, 41, 95, 41);
 
@@ -75,7 +75,6 @@ document.getElementById("receiptForm").addEventListener("submit", function(e) {
   doc.text(":", 45, 61);
   doc.text(balance, 48, 61);
 
-  // Garisan pemisah
   doc.setLineWidth(0.1);
   doc.line(10, 64, 95, 64);
 
@@ -96,4 +95,4 @@ document.getElementById("receiptForm").addEventListener("submit", function(e) {
   doc.text("Resit ini dijana secara automatik.", 52.5, 140, { align: "center" });
 
   doc.save(`${invoiceNo}.pdf`);
-});
+}); 
